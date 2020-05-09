@@ -19,4 +19,4 @@ after_success:
   - docker push pinwi93/multi-client
   - docker push pinwi93/multi-nginx
   - docker push pinwi93/multi-server
-  - docker push pinwi93 /multi-worker
+  - docker push pinwi93/multi-worker
