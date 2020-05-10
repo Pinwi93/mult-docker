@@ -20,3 +20,16 @@ after_success:
   - docker push pinwi93/multi-nginx
   - docker push pinwi93/multi-server
   - docker push pinwi93/multi-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-2
+  app: multi-docker
+  env: MultiDocker-env
+  bucket_name: elasticbeanstalk-us-east-2-718049919144
+  bucket_path: docker-multi
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_acces_key: $AWS_SECRET_KEY
+  edge: true
